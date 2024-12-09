@@ -89,12 +89,10 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
                         if (firebaseUser != null) {
-                            String uid = firebaseUser.getUid(); // Get the user's UID
+                            String uid = firebaseUser.getUid();
 
-                            // Reference to the "users" node in Firebase Realtime Database
                             DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(uid);
 
-                            // Fetch user data from the database
                             userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
