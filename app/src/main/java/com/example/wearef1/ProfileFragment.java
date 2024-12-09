@@ -81,14 +81,12 @@ public class ProfileFragment extends Fragment {
         dialog.setContentView(R.layout.custom_dialogue);
         dialog.setCancelable(true);
 
-        // Access the views from the custom layout
         TextView title = dialog.findViewById(R.id.dialog_title);
         EditText input_username = dialog.findViewById(R.id.dialog_input_username);
         EditText input_password = dialog.findViewById(R.id.dialog_input_password);
         Button positiveButton = dialog.findViewById(R.id.dialog_positive_button);
         Button negativeButton = dialog.findViewById(R.id.dialog_negative_button);
 
-        // Set up click listeners
         positiveButton.setOnClickListener(v -> {
             String userInput_Username = input_username.getText().toString().trim();
             String userInput_Password = input_password.getText().toString().trim();
